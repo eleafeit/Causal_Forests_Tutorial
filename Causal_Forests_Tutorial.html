@@ -4831,8 +4831,8 @@ brown &lt;- 1*(chicks$color == &quot;b&quot;) # 1=b, 2=w</pre>
 
 <p>A <strong>classification and regression tree (CART)</strong> is an alternative to a linear model for regression. Here is a CART predicting <code>grams_day25</code> from our potential modifiers.</p>
 
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3a1b6c77ad188f0232d9" style="width:720px;height:432px;"></div>
-<script type="application/json" data-for="htmlwidget-3a1b6c77ad188f0232d9">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" grams_day0 <= 444.53 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1 [label=\" female <= 0 \"] ;\n1 -> 3 [ arrowhead=empty];\n1 -> 4 [ arrowhead=normal];\n3  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  3 \n avg_Y = 1126.44 \"];\n4  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 1095.44 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  1 \n avg_Y = 1215.65 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2e26c28963cb8263dbac" style="width:720px;height:432px;"></div>
+<script type="application/json" data-for="htmlwidget-2e26c28963cb8263dbac">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" grams_day0 <= 444.53 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1 [label=\" female <= 0 \"] ;\n1 -> 3 [ arrowhead=empty];\n1 -> 4 [ arrowhead=normal];\n3  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  3 \n avg_Y = 1126.44 \"];\n4  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 1095.44 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  1 \n avg_Y = 1215.65 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </article></slide><slide class=""><hgroup><h2>Preliminary: Random forests</h2></hgroup><article  id="preliminary-random-forests">
 
@@ -4852,15 +4852,15 @@ rf &lt;- regression_forest(X, Y, num.trees = 100, seed=20230517)</pre>
 
 <pre class = 'prettyprint lang-r'>plot(get_tree(rf, 1))</pre>
 
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40da5db3419bddc0b89d" style="width:720px;height:432px;"></div>
-<script type="application/json" data-for="htmlwidget-40da5db3419bddc0b89d">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" breeder <= 0 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 961.63 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 802.87 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cf29cc6349927083ab95" style="width:720px;height:432px;"></div>
+<script type="application/json" data-for="htmlwidget-cf29cc6349927083ab95">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" breeder <= 0 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 961.63 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  4 \n avg_Y = 802.87 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </article></slide><slide class=""><hgroup><h2>Random forest tree 2</h2></hgroup><article  id="random-forest-tree-2">
 
 <pre class = 'prettyprint lang-r'>plot(get_tree(rf, 4))</pre>
 
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f33e7016adf03673c72a" style="width:720px;height:432px;"></div>
-<script type="application/json" data-for="htmlwidget-f33e7016adf03673c72a">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" grams_day0 <= 408.24 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  3 \n avg_Y = 1206.58 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  5 \n avg_Y = 1080.47 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1f151815e8f17f22dd9d" style="width:720px;height:432px;"></div>
+<script type="application/json" data-for="htmlwidget-1f151815e8f17f22dd9d">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" grams_day0 <= 408.24 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\", arrowhead=empty];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\", arrowhead=normal];\n1  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  3 \n avg_Y = 1206.58 \"];\n2  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\"size =  5 \n avg_Y = 1080.47 \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </article></slide><slide class=""><hgroup><h2>Random forest predictions</h2></hgroup><article  id="random-forest-predictions">
 
@@ -4968,8 +4968,8 @@ rewards &lt;- cbind(control=-get_scores(cf), treat=get_scores(cf))
 tree &lt;- policy_tree(X, rewards, min.node.size = 1)
 plot(tree, leaf.labels=c(&quot;Involuntary Walk-On&quot;, &quot;Voluntary Bucket&quot;))</pre>
 
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-904cda95963566febcd4" style="width:720px;height:432px;"></div>
-<script type="application/json" data-for="htmlwidget-904cda95963566febcd4">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" breeder <= 0 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\"];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\"]\n1 [label=\" hatch_date <= 19508 \"] ;\n1 -> 3  ;\n1 -> 4  ;\n3  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Voluntary Bucket \"];\n4  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Involuntary Walk-On \"];\n2 [label=\" female <= 0 \"] ;\n2 -> 5  ;\n2 -> 6  ;\n5  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Involuntary Walk-On \"];\n6  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Voluntary Bucket \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8a18efaaf81a4dce77a9" style="width:720px;height:432px;"></div>
+<script type="application/json" data-for="htmlwidget-8a18efaaf81a4dce77a9">{"x":{"diagram":"digraph nodes { \n node [shape=box] ;\n0 [label=\" breeder <= 0 \"] ;\n0 -> 1 [labeldistance=2.5, labelangle=45, headlabel=\"True\"];\n0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel=\"False\"]\n1 [label=\" hatch_date <= 19508 \"] ;\n1 -> 3  ;\n1 -> 4  ;\n3  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Voluntary Bucket \"];\n4  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Involuntary Walk-On \"];\n2 [label=\" female <= 0 \"] ;\n2 -> 5  ;\n2 -> 6  ;\n5  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Involuntary Walk-On \"];\n6  [shape=box,style=filled,color=\".7 .3 1.0\" , label=\" Voluntary Bucket \"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 </article></slide><slide class=""><hgroup><h2>Which predictors are the most important?</h2></hgroup><article  id="which-predictors-are-the-most-important">
 
